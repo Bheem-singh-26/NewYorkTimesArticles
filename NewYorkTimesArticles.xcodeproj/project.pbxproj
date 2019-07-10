@@ -24,6 +24,7 @@
 		9B61EAFC22D4E6280080696A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61EAFB22D4E6280080696A /* DetailsViewController.swift */; };
 		9B61EB0022D5C0800080696A /* RArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61EAFF22D5C0800080696A /* RArticle.swift */; };
 		9B61EB0222D5C78F0080696A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61EB0122D5C78F0080696A /* RealmManager.swift */; };
+		9B61EB0A22D62B940080696A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9B61EB0922D62B940080696A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		9B61EAFB22D4E6280080696A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9B61EAFF22D5C0800080696A /* RArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RArticle.swift; sourceTree = "<group>"; };
 		9B61EB0122D5C78F0080696A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9B61EB0922D62B940080696A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C534A3FCFC162FABB8A3CC67 /* Pods_NewYorkTimesArticles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewYorkTimesArticles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				9B61EACF22D465210080696A /* Assets.xcassets */,
 				9B61EAD122D465210080696A /* LaunchScreen.storyboard */,
 				9B61EAD422D465210080696A /* Info.plist */,
+				9B61EB0922D62B940080696A /* README.md */,
 			);
 			path = NewYorkTimesArticles;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				9B61EAF522D4CC400080696A /* ArticleTableViewCell.xib in Resources */,
 				9B61EAD322D465210080696A /* LaunchScreen.storyboard in Resources */,
+				9B61EB0A22D62B940080696A /* README.md in Resources */,
 				9B61EAD022D465210080696A /* Assets.xcassets in Resources */,
 				9B61EACE22D465210080696A /* Main.storyboard in Resources */,
 			);
