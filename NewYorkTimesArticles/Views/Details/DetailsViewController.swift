@@ -22,7 +22,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var openLinkButton: UIButton!
     
     
-    public var article : Article!
+    public var article : RArticle!
     private let disposeBag = DisposeBag()
     
     

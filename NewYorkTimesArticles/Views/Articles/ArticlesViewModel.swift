@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RealmSwift
+import SwiftyJSON
 
 
 class ArticlesViewModel {
@@ -19,7 +20,7 @@ class ArticlesViewModel {
         case serverMessage(String)
     }
     
-    public let articles : PublishSubject<[Article]> = PublishSubject()
+    public let articles : PublishSubject<[RArticle]> = PublishSubject()
     public let error : PublishSubject<HomeError> = PublishSubject()
     
     public let isRefreshing : PublishSubject<Bool> = PublishSubject()
@@ -29,12 +30,17 @@ class ArticlesViewModel {
             requestData()
         }
     }
+    private let disposeBag = DisposeBag()
     
-    
+    let realmManager = RealmManager()
     
     public func requestData(){
         
-        fetchDataFromServer()
+        if self.realmManager.isDatabaseEmptyFor(section: self.articleSection){
+            self.articles.onNext(self.realmManager.retrieveArticleListFor(section: self.articleSection))
+        }else{
+            self.fetchDataFromServer()
+        }
         
     }
     
@@ -48,14 +54,15 @@ class ArticlesViewModel {
                 var articles = responseJson["results"].arrayValue.compactMap{ return Article(data: try!$0.rawData())}
                 
                 // Ordering issues list by recent updated
-                articles = articles.sorted(by: {$0.published_date > $1.published_date})
+                articles = articles.sorted(by: { $0.published_date > $1.published_date })
+                articles = articles.filter({ $0.section == self.articleSection.capitalized})
                 
-//                // Store issues to DB
-//                RealmIssue.save(issues: issues)
-//                RealmManager.saveDateDBWriteDate()
-//
-//                let realmIssues = RealmIssue.mapRealmIssuesFrom(issues: issues)
-                self.articles.onNext(articles)
+                let rArticle =  RArticle.mapRealmArticleFrom(articles: articles)
+                self.articles.onNext(rArticle)
+                
+                // save Articles to database
+                RArticle.save(collecton: articles)
+                
                 self.isRefreshing.onNext(false)
                 
             case .failure(let failure) :

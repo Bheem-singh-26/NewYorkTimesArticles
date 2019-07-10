@@ -61,7 +61,6 @@ struct Article: Codable {
         case url
     }
     
-    
 }
 
 extension Article {

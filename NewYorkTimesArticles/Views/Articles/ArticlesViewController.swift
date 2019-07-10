@@ -16,7 +16,7 @@ class ArticlesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    public var articles:  PublishSubject<[Article]> = PublishSubject()
+    public let articles : PublishSubject<[RArticle]> = PublishSubject()
     
     private let disposeBag = DisposeBag()
     public var articlesViewModel = ArticlesViewModel()
@@ -52,7 +52,7 @@ class ArticlesViewController: UIViewController {
             // perform action you want to perform
             
             self.articlesViewModel.isRefreshing.onNext(true)
-            self.articlesViewModel.articleSection = self.articlesViewModel.articleSection
+            self.articlesViewModel.fetchDataFromServer()
             
         }).addDisposableTo(disposeBag)
         tableView.addSubview(refreshControl)

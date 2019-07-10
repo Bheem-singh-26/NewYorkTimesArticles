@@ -17,7 +17,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     static let identifier = "ArticleTableViewCell"
     
-    var article : Article! {
+    var article : RArticle! {
         didSet {
             self.title.text = self.article.title
             self.author.text = self.article.byline
