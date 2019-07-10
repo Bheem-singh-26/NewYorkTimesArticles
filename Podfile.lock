@@ -1,4 +1,5 @@
 PODS:
+  - DropDown (2.3.13)
   - Realm (3.16.2):
     - Realm/Headers (= 3.16.2)
   - Realm/Headers (3.16.2)
@@ -13,6 +14,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - DropDown
   - RealmSwift
   - RxCocoa
   - RxSwift
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - DropDown
     - Realm
     - RealmSwift
     - RxCocoa
@@ -28,6 +31,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
   RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
@@ -35,6 +39,6 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 4fa0721896d588f8621299519c6d863751db9751
+PODFILE CHECKSUM: 6c2e67f4bd1fdc1a4b9dc187c7d7ad826b2df99d
 
 COCOAPODS: 1.6.1

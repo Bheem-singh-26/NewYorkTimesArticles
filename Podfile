@@ -13,7 +13,7 @@ target 'NewYorkTimesArticles' do
     pod 'RxCocoa'
     pod 'SwiftyJSON'
     pod 'RealmSwift'
-    
+    pod 'DropDown'
     
 	
 end
